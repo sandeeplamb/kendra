@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><title>Kendra</title>
+<defs><linearGradient id="t" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#14412f"/><stop offset="1" stop-color="#06100c"/></linearGradient></defs>
+<rect x="6.25" y="6.25" width="51.50" height="51.50" rx="11.56" fill="url(#t)"/>
+<g transform="translate(32 32)">
+<polygon points="0.21,-0.36 0.21,-20.26 8.83,-15.29" fill="#34d6a6"/>
+<polygon points="0.21,-0.36 8.83,-15.29 17.44,-10.31" fill="#269e7a"/>
+<polygon points="0.42,0.00 17.65,-9.95 17.65,0.00" fill="#f2b24a"/>
+<polygon points="0.42,0.00 17.65,0.00 17.65,9.95" fill="#b38336"/>
+<polygon points="0.21,0.36 17.44,10.31 8.83,15.29" fill="#ff7b66"/>
+<polygon points="0.21,0.36 8.83,15.29 0.21,20.26" fill="#bc5b4b"/>
+<polygon points="-0.21,0.36 -0.21,20.26 -8.83,15.29" fill="#5ab8ff"/>
+<polygon points="-0.21,0.36 -8.83,15.29 -17.44,10.31" fill="#4288bc"/>
+<polygon points="-0.42,-0.00 -17.65,9.95 -17.65,-0.00" fill="#b69cff"/>
+<polygon points="-0.42,-0.00 -17.65,-0.00 -17.65,-9.95" fill="#8673bc"/>
+<polygon points="-0.21,-0.36 -17.44,-10.31 -8.83,-15.29" fill="#e7f6a3"/>
+<polygon points="-0.21,-0.36 -8.83,-15.29 -0.21,-20.26" fill="#aab678"/>
+<circle r="2.75" fill="#06100c"/></g></svg>

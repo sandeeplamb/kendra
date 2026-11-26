@@ -1,0 +1,148 @@
+{
+  "verifiedOn": "2026-11-26",
+  "note": "Only facts read from the linked primary sources. basis=supported: the project states these Kubernetes versions are supported. basis=tested: the project states the versions it tests against, with no guarantee outside them. k8sMax 0 means no upper bound is published; series * matches any release. listedFrom/listedTo: the source table covers only these Kubernetes minors, so a cluster outside them is unclear, not bad. olderStatus is the status for a release series older than every listed one: bad when the project's policy says old releases are unsupported, unclear when this file simply has no row. eolDate (a day that has passed) and ended mean the release no longer gets fixes. retired marks a project that is no longer maintained.",
+  "addons": [
+    {
+      "id": "cert-manager",
+      "basis": "supported",
+      "olderStatus": "bad",
+      "source": "https://cert-manager.io/docs/releases/",
+      "latest": "1.21",
+      "releases": [
+        {"series": "1.21", "k8sMin": 33, "k8sMax": 36, "eol": "release of 1.23"},
+        {"series": "1.20", "k8sMin": 32, "k8sMax": 35, "eol": "release of 1.22"}
+      ]
+    },
+    {
+      "id": "metrics-server",
+      "basis": "supported",
+      "olderStatus": "unclear",
+      "source": "https://github.com/kubernetes-sigs/metrics-server#compatibility-matrix",
+      "latest": "0.9",
+      "releases": [
+        {"series": "0.9", "k8sMin": 34, "k8sMax": 0},
+        {"series": "0.8", "k8sMin": 31, "k8sMax": 0}
+      ]
+    },
+    {
+      "id": "keda",
+      "basis": "tested",
+      "olderStatus": "unclear",
+      "source": "https://keda.sh/docs/2.21/operate/cluster/#kubernetes-compatibility",
+      "latest": "2.21",
+      "releases": [
+        {"series": "2.21", "k8sMin": 34, "k8sMax": 36},
+        {"series": "2.20", "k8sMin": 33, "k8sMax": 35},
+        {"series": "2.19", "k8sMin": 32, "k8sMax": 34},
+        {"series": "2.17", "k8sMin": 30, "k8sMax": 32},
+        {"series": "2.16", "k8sMin": 29, "k8sMax": 31},
+        {"series": "2.15", "k8sMin": 28, "k8sMax": 30}
+      ]
+    },
+    {
+      "id": "datadog-operator",
+      "basis": "tested",
+      "olderStatus": "unclear",
+      "source": "https://docs.datadoghq.com/containers/guide/operator-advanced/",
+      "releases": [
+        {"series": "*", "k8sMin": 20, "k8sMax": 0, "note": "Datadog tests the Operator on Kubernetes 1.20 and newer and expects 1.11 and newer to work. No per-release table is published."}
+      ]
+    },
+    {
+      "id": "karpenter",
+      "basis": "supported",
+      "olderStatus": "bad",
+      "listedFrom": 31,
+      "listedTo": 37,
+      "source": "https://karpenter.sh/docs/upgrading/compatibility/",
+      "latest": "1.15",
+      "releases": [
+        {"series": "1.15", "k8sMin": 31, "k8sMax": 37, "eol": "until 1.16 is released"},
+        {"series": "1.14", "k8sMin": 31, "k8sMax": 36, "eol": "LTS, Jul 2027"},
+        {"series": "1.13", "k8sMin": 31, "k8sMax": 36, "eol": "superseded", "ended": true},
+        {"series": "1.12", "k8sMin": 31, "k8sMax": 35, "eol": "superseded", "ended": true},
+        {"series": "1.11", "k8sMin": 31, "k8sMax": 35, "eol": "superseded", "ended": true},
+        {"series": "1.10", "k8sMin": 31, "k8sMax": 35, "eol": "superseded", "ended": true},
+        {"series": "1.9", "k8sMin": 31, "k8sMax": 35, "eol": "LTS, Feb 2027"},
+        {"series": "1.8", "k8sMin": 31, "k8sMax": 34, "eol": "superseded", "ended": true},
+        {"series": "1.7", "k8sMin": 31, "k8sMax": 34, "eol": "superseded", "ended": true},
+        {"series": "1.6", "k8sMin": 31, "k8sMax": 34, "eol": "superseded", "ended": true},
+        {"series": "1.5", "k8sMin": 31, "k8sMax": 33, "eol": "superseded", "ended": true},
+        {"series": "1.4", "k8sMin": 31, "k8sMax": 32, "eol": "superseded", "ended": true},
+        {"series": "1.3", "k8sMin": 31, "k8sMax": 32, "eol": "superseded", "ended": true},
+        {"series": "1.2", "k8sMin": 31, "k8sMax": 32, "eol": "superseded", "ended": true},
+        {"series": "1.1", "k8sMin": 31, "k8sMax": 31, "eol": "superseded", "ended": true},
+        {"series": "1.0", "k8sMin": 31, "k8sMax": 31, "eol": "superseded", "ended": true, "note": "Kubernetes 1.31 needs Karpenter 1.0.5 or newer."}
+      ]
+    },
+    {
+      "id": "ingress-nginx",
+      "basis": "tested",
+      "olderStatus": "bad",
+      "retired": "ingress-nginx is retired: best-effort maintenance ended in March 2026, with no further releases, bug fixes or security fixes. Move to a Gateway API implementation.",
+      "source": "https://github.com/kubernetes/ingress-nginx#ingress-nginx-retirement",
+      "latest": "1.15",
+      "releases": [
+        {"series": "1.15", "k8sMin": 31, "k8sMax": 35}
+      ]
+    },
+    {
+      "id": "external-secrets",
+      "basis": "tested",
+      "olderStatus": "bad",
+      "source": "https://external-secrets.io/latest/introduction/stability-support/",
+      "latest": "2.15",
+      "releases": [
+        {"series": "2.15", "k8sMin": 37, "k8sMax": 37, "eol": "next release"},
+        {"series": "2.14", "k8sMin": 37, "k8sMax": 37, "eolDate": "2026-11-10"},
+        {"series": "2.13", "k8sMin": 36, "k8sMax": 36, "eolDate": "2026-10-23"}
+      ]
+    },
+    {
+      "id": "istio",
+      "basis": "supported",
+      "olderStatus": "bad",
+      "source": "https://istio.io/latest/docs/releases/supported-releases/",
+      "latest": "1.32",
+      "releases": [
+        {"series": "1.32", "k8sMin": 33, "k8sMax": 37, "eol": "~Jun 2027 (expected)"},
+        {"series": "1.31", "k8sMin": 32, "k8sMax": 37, "eol": "~Mar 2027 (expected)"},
+        {"series": "1.30", "k8sMin": 32, "k8sMax": 36, "eol": "16 Dec 2026 (expected)"},
+        {"series": "1.29", "k8sMin": 31, "k8sMax": 35, "eolDate": "2026-10-15"},
+        {"series": "1.28", "k8sMin": 30, "k8sMax": 34, "eolDate": "2026-07-01"},
+        {"series": "1.27", "k8sMin": 29, "k8sMax": 33, "eolDate": "2026-04-07"},
+        {"series": "1.26", "k8sMin": 29, "k8sMax": 33, "eolDate": "2025-12-22"}
+      ]
+    }
+  ],
+  "platforms": {
+    "EKS": {
+      "source": "https://docs.aws.amazon.com/eks/latest/userguide/kubernetes-versions.html",
+      "extendedLabel": "extended support (extra cost per cluster hour)",
+      "versions": [
+        {"k8s": 31, "standardEnd": "2025-11-26", "extendedEnd": "2026-11-26"},
+        {"k8s": 32, "standardEnd": "2026-03-23", "extendedEnd": "2027-03-23"},
+        {"k8s": 33, "standardEnd": "2026-07-29", "extendedEnd": "2027-07-29"},
+        {"k8s": 34, "standardEnd": "2026-12-02", "extendedEnd": "2027-12-02"},
+        {"k8s": 35, "standardEnd": "2027-03-27", "extendedEnd": "2028-03-27"},
+        {"k8s": 36, "standardEnd": "2027-08-02", "extendedEnd": "2028-08-02"},
+        {"k8s": 37, "standardEnd": "2027-12-01", "extendedEnd": "2028-12-01"}
+      ]
+    },
+    "AKS": {
+      "source": "https://learn.microsoft.com/en-us/azure/aks/supported-kubernetes-versions",
+      "extendedLabel": "long-term support (LTS, must be enabled)",
+      "versions": [
+        {"k8s": 29, "standardEnd": "2025-03-31", "extendedEnd": "2026-04-30"},
+        {"k8s": 30, "standardEnd": "2025-08-22", "extendedEnd": "2026-07-31"},
+        {"k8s": 31, "standardEnd": "2025-11-01", "extendedEnd": "2026-11-30"},
+        {"k8s": 32, "standardEnd": "2026-03-31", "extendedEnd": "2027-03-31"},
+        {"k8s": 33, "standardEnd": "2026-07-31"},
+        {"k8s": 34, "standardEnd": "2026-11-30"},
+        {"k8s": 35, "standardEnd": "2027-03-31"},
+        {"k8s": 36, "standardEnd": "2027-06-30"},
+        {"k8s": 37, "standardEnd": "2027-10-31"}
+      ]
+    }
+  }
+}

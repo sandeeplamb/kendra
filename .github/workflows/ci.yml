@@ -1,0 +1,48 @@
+# Kendra CI: tests on pull requests and main, plus a check that every platform still compiles.
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test-go:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.24"
+      - name: gofmt
+        run: |
+          gofmt -l cmd internal packaging | tee /tmp/gofmt.txt
+          test ! -s /tmp/gofmt.txt
+      - run: make test-go
+
+  test-js:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: make test-js
+
+  # The macOS native window needs cgo and the macOS SDK, so darwin builds without it here.
+  # The real macOS build happens in the release workflow.
+  build-platforms:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.24"
+      - run: |
+          for p in linux/amd64 linux/arm64 windows/amd64 darwin/amd64 darwin/arm64; do
+            echo "  $p"
+            GOOS=${p%/*} GOARCH=${p#*/} CGO_ENABLED=0 go build -buildvcs=false -o /dev/null ./cmd/knd
+          done
