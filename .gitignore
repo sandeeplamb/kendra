@@ -1,0 +1,64 @@
+# Build output
+/knd
+/knd.exe
+/dist/
+/bin/
+*.app/
+*.pkg
+*.dmg
+*.zip
+*.tar.gz
+
+# Go
+*.test
+*.out
+*.exe
+*.dll
+*.so
+*.dylib
+coverage.txt
+coverage.html
+/vendor/
+go.work
+go.work.sum
+
+# Secrets and local config: never commit these
+.env
+.env.*
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+kubeconfig
+*.kubeconfig
+.kube/
+.kendra/
+*.tfstate
+*.tfstate.*
+
+# Logs and temp files
+*.log
+*.tmp
+*.bak
+*.orig
+*.rej
+tmp/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Editors and tools
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# CI cache
+/.go/

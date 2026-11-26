@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kendra</title>
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="app.css">
+<script>
+  // apply the saved theme before first paint, so there is no flash
+  (function () { var t = localStorage.getItem("knd.theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; })();
+</script>
+</head>
+<body>
+<div id="app">
+  <header class="top">
+    <a class="brand" href="#/start" title="Start screen"><img src="logo.svg" alt="" width="28" height="28"><span>Kendra</span></a>
+    <div class="pickers">
+      <div class="pick" id="ctxpick"><span>Cluster</span><select id="ctx" aria-label="Cluster" hidden></select></div>
+      <label class="pick"><span>Namespace</span><select id="ns" aria-label="Namespace"></select></label>
+    </div>
+    <div class="spacer"></div>
+    <span id="ro" class="badge ro" title="Kendra never changes anything in your clusters" hidden>read-only</span>
+    <button id="saveview" class="btn ghost" title="Save this page with its cluster scope, namespace and filter">☆ Save view</button>
+    <button id="jump" class="btn ghost" title="Jump to anything">Jump to… <kbd>Ctrl K</kbd></button>
+    <button id="theme" class="btn ghost" title="Theme: auto, light or dark"></button>
+  </header>
+  <nav id="rail" class="rail" aria-label="Sections"></nav>
+  <main id="main" class="main"></main>
+</div>
+<aside id="drawer" class="drawer" hidden></aside>
+<div id="modal" class="modal" hidden></div>
+<div id="toast" class="toast" hidden></div>
+<script src="filter.js"></script>
+<script src="graph.js"></script>
+<script src="core.js"></script>
+<script src="views.js"></script>
+<script src="views2.js"></script>
+<script src="views3.js"></script>
+<script src="views4.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
